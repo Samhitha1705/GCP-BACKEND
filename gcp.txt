@@ -1,0 +1,80 @@
+need to install gcp cli for windows
+next in application properties set accordingly to local url only
+spring.datasource.url=jdbc:mysql://localhost:3306/deliveryapp?createDatabaseIfNotExist=true&useSSL=false
+spring.datasource.username=root
+spring.datasource.password=root
+through
+
+mvn clean install
+
+--> new jar file is created
+
+after that
+
+in gcp platform
+
+
+create compute engine for less cost
+
+after that in networking enable http and https
+
+after this vm is created
+
+it is like another block next in
+  -->vpc network
+     1) in firewall poicies
+     2)create firewall rule by clicking specified in the tcp need to mention 8080
+     3)enable the port 8080 according to your backend application
+
+next after in vm instances
+need to open ssh
+
+in ssh
+
+-->sudo apt update
+-->sudo apt install -y openjdk-17-jdk
+-->java -version
+Install MySQL on VM
+-->sudo apt update
+-->sudo apt upgrade -y
+Install MariaDB server
+-->sudo apt install -y mariadb-server mariadb-client
+-->sudo mysql_secure_installation
+-->sudo mariadb -u root -p
+
+Inside MariaDB shell:
+
+
+CREATE DATABASE deliveryapp;
+CREATE USER 'backenduser'@'localhost' IDENTIFIED BY 'YourStrongPassword';
+GRANT ALL PRIVILEGES ON tenant_db.* TO 'backenduser'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+
+
+after that
+
+in the ssh browser "we can upload the file"
+
+--> this file is uploaded 100% means need to check
+through
+--> ls -lh
+-->mv ems-backend-0.0.1-SNAPSHOT.jar.csupload ems-backend-0.0.1-SNAPSHOT.jar
+-->ls -lh
+-->-rw-r--r-- 1 gopalamvedasamhitha1517 gopalamvedasamhitha1517 54M Sep 27 08:01 ems-backend-0.0.1-SNAPSHOT.jar
+-->java -jar ems-backend-0.0.1-SNAPSHOT.jar
+Keep it running after logout
+
+nohup java -jar ems-backend-0.0.1-SNAPSHOT.jar > backend.log 2>&1 &
+
+
+
+------another process instead of uploading need to run with cmd means------
+
+C:\Users\1016\Downloads\gcp-backend-main\gcp-backend-main>
+"C:\Users\1016\Downloads\gcp-backend-main\gcp-backend-main\target\ems-backend-0.0.1-SNAPSHOT.jar" gopalamvedasamhitha1517@kikibackend:~ --zone us-central1-c
+
+-->java -jar ems-backend-0.0.1-SNAPSHOT.jar
+
+
+
