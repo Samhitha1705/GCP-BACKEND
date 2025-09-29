@@ -24,6 +24,7 @@ it is like another block next in
   -->vpc network
      1) in firewall poicies
      2)create firewall rule by clicking specified in the tcp need to mention 8080
+       where we need to allow all the instances by clicking 0.0.0.0/0
      3)enable the port 8080 according to your backend application
 
 next after in vm instances
